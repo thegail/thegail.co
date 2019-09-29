@@ -155,24 +155,6 @@ div {
 	background:var(--redorange)
 }
 
-#viewcounter {
-	position:relative;
-	top:50%;
-	left:50%;
-	transform:translate(-50%,-50%);
-	width:100px;
-}
-
-#viewcounterwrap {
-	height:35px;
-	width:20%;
-	position:relative;
-	top:50%;
-	left:50%;
-	transform:translatex(-50%);
-	background:var(--white);
-}
-
 /* End body area */
 /* Begin footer area */
 
@@ -199,14 +181,7 @@ div {
 	background:var(--redorange);
 }
 
-#glitchlinkfootertext {
-	position:relative;
-	left:50%;
-	top:25%;
-	transform:TranslateX(-50%);
-}
-
-#readmelink {
+#sourcelink {
 	position:relative;
 	left:50%;
 	top:25%;

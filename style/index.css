@@ -179,6 +179,8 @@ div {
 #footlinks {
 	grid-area:footlinks;
 	background:var(--redorange);
+	position: relative;
+	height:100%;
 }
 
 #sourcelink {

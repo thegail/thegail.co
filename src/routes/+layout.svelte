@@ -1,6 +1,7 @@
 <script>
     import { onMount } from "svelte";
     import { page } from "$app/stores";
+    import staticData from "$lib/staticdata.json";
 
     let isDarkMode = false;
     $: darkText = isDarkMode ? "_dark" : "";
@@ -38,7 +39,12 @@
     </div>
 </main>
 <footer>
-    hi :) / &copy; 2022 thegail / &#x1F3F7; dev
+    <span>
+        &copy; thegail 2022 /
+        &#x1F3F7; <code>{staticData.commitHash}</code> /
+        &#x1F528; {staticData.buildDate} /
+        &#x1F9F1; with <a href="https://kit.svelte.dev" target="_blank">SvelteKit</a>
+    </span>
 </footer>
 
 <style>
@@ -49,8 +55,10 @@
     }
 
     .banner {
-        height: 150px;
+        max-width: 100%;
+        max-height: 150px;
         width: auto;
+        height: auto;
     }
 
     nav {
@@ -101,6 +109,15 @@
     :global(html) {
         width: 100%;
         height: 100%;
+    }
+
+    :global(ul) {
+        list-style-type: ">   ";
+    }
+
+    :global(code) {
+        font-family: Menlo, monospace;
+        font-size: 0.9em;
     }
 
     @media(prefers-color-scheme: light) {

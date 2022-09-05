@@ -1,0 +1,93 @@
+/* Begin body.css */
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background: var(--primary);
+  color: var(--secondary);
+  font-family: lato, helvetica, sans-serif;
+  overflow: hidden;
+}
+
+a {
+  color: var(--secondary);
+}
+/* End body.css */
+
+/* Begin main.css */
+main {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 70%;
+  width: 65%;
+}
+/* End main.css */
+
+/* Begin header.css */
+header {
+  border-bottom: 2px solid var(--secondary);
+  position: relative;
+  top: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 20%;
+  width: 95%;
+}
+
+nav {
+  padding: 10px;
+  border-top: 2px solid var(--secondary);
+  display: flex;
+  justify-content: center;
+}
+
+img#banner {
+  position: relative;
+  top: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 70%;
+  width: auto;
+}
+
+.navlink {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+/* End header.css */
+
+/* Begin colorscheme.css */
+@media (prefers-color-scheme: dark) {
+  body {
+    --primary: #202020;
+    --secondary: #D0D0D0;
+  }
+  img {
+    filter: brightness(6.5);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    --primary: #D0D0D0;
+    --secondary: #202020;
+  }
+}
+/* End colorscheme.css */
+
+/* Begin footer.css */
+footer {
+  border-top: 2px solid var(--secondary);
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 10%;
+  width: 95%;
+  text-align: center;
+  padding: 10px;
+}
+/* End footer.css */
+

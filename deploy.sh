@@ -1,6 +1,7 @@
 #!/bin/zsh
 
 git switch main
+npm i
 HASH=$(git log -n 1 --pretty=format:"%h")
 DATE=$(date '+%B %d, %Y')
 echo "{\"commitHash\": \"$HASH\", \"buildDate\": \"$DATE\"}" > src/lib/staticdata.json

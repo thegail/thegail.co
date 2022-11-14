@@ -2,9 +2,13 @@
     import { onMount } from "svelte";
     import { page } from "$app/stores";
     import staticData from "$lib/staticdata.json";
+    import faviconLight from "$lib/assets/favicon.svg";
+    import faviconDark from "$lib/assets/favicon_dark.svg";
+    import bannerLight from "$lib/assets/fullsize_transparent.png";
+    import bannerDark from "$lib/assets/fullsize_transparent_dark.png";
 
     let isDarkMode = false;
-    $: darkText = isDarkMode ? "_dark" : "";
+    $: favicon = isDarkMode ? faviconDark : faviconLight;
     onMount(() => {
         isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
         console.log(isDarkMode);
@@ -17,15 +21,15 @@
 
 <svelte:head>
     <title>thegail</title>
-    <link rel="apple-touch-icon" href="%sveltekit.assets%/favicon{darkText}.svg" />
-    <link rel="icon" type="image/png" href="%sveltekit.assets%/favicon{darkText}.svg" />
-    <link rel="mask-icon" href="%sveltekit.assets%/favicon{darkText}.svg" color="#202020" />
-    <link rel="shortcut icon" href="%sveltekit.assets%/favicon{darkText}.svg" />
+    <link rel="apple-touch-icon" href={favicon} />
+    <link rel="icon" type="image/png" href={favicon} />
+    <link rel="mask-icon" href={favicon} color="#202020" />
+    <link rel="shortcut icon" href={favicon} />
     <meta name="theme-color" content={isDarkMode ? "#202020" : "#D0D0D0"} />
 </svelte:head>
 
 <header>
-    <img class="banner" src="/fullsize_transparent{darkText}.png" alt="thegail" />
+    <img class="banner" src={isDarkMode ? bannerDark : bannerLight} alt="thegail" />
     <nav>
         <svelte:element this={tagValue("/")} href="/">home</svelte:element> /
         <svelte:element this={tagValue("/about")} href="/about">about</svelte:element> /

@@ -12,7 +12,7 @@ echo "/.svelte-kit" > .gitignore
 echo ".DS_Store" > .gitignore
 mv build/* ./
 rm -r build
-git restore src/lib/staticdata.json
+git rm -r --cached .
 git add .
 git commit -m "Add deployment for $HASH"
 git switch deploy/current

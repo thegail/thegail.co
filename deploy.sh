@@ -31,7 +31,8 @@ git commit -m "Add deployment for $HASH"
 
 # Merge into deploy/current
 git switch deploy/current
-git merge -X theirs deploy/$HASH --allow-unrelated-histories --squash -m "Add deployment for $HASH"
+git merge -X theirs deploy/$HASH --allow-unrelated-histories --squash
+git commit -m "Add deployment for $HASH"
 
 git branch -d deploy/$HASH
 git switch main

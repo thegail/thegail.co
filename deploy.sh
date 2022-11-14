@@ -8,9 +8,9 @@ echo "{\"commitHash\": \"$HASH\", \"buildDate\": \"$DATE\"}" > src/lib/staticdat
 npm run build
 git restore src/lib/staticdata.json
 git switch --orphan deploy/$HASH
-echo "/node_modules" > .gitignore
-echo "/.svelte-kit" > .gitignore
-echo ".DS_Store" > .gitignore
+echo "/node_modules" >> .gitignore
+echo "/.svelte-kit" >> .gitignore
+echo ".DS_Store" >> .gitignore
 mv build/* ./
 rm -r build
 git rm -r --cached .

@@ -16,6 +16,6 @@ git restore src/lib/staticdata.json
 git add .
 git commit -m "Add deployment for $HASH"
 git switch deploy/current
-git merge -X theirs deploy/$HASH --allow-unrelated-histories
+git merge -X theirs deploy/$HASH --allow-unrelated-histories -m "Add deployment for $HASH"
 git branch -d deploy/$HASH
 git switch main

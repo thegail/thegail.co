@@ -3,7 +3,8 @@
     import bannerDark from "$lib/assets/fullsize_transparent_dark.png";
     import { onMount } from "svelte";
 
-    export let maxHeight = 150;
+    export let maxHeight = "150px";
+    export let maxWidth = "100%";
 
     let isDarkMode = false;
     onMount(() => {
@@ -12,11 +13,10 @@
     });
 </script>
 
-<img class="banner" style:max-height="{maxHeight}px" src={isDarkMode ? bannerDark : bannerLight} alt="thegail" />
+<img class="banner" style:max-height={maxHeight} style:max-width={maxWidth} src={isDarkMode ? bannerDark : bannerLight} alt="thegail" />
 
 <style>
     .banner {
-        max-width: 100%;
         width: auto;
         height: auto;
     }

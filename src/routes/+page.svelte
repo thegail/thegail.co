@@ -26,7 +26,7 @@
     <div class="spacer" />
     <Banner />
 
-    <nav>
+    <nav data-sveltekit-prefetch>
         <svelte:element this={tagValue("/")} href="/" style:opacity={getOpacity(1)}>home</svelte:element>
         <span style:opacity={getOpacity(2)}>/</span>
         <svelte:element this={tagValue("/about")} href="/about" style:opacity={getOpacity(3)}>about</svelte:element>

@@ -10,7 +10,7 @@
 
 <header>
     <Banner />
-    <nav>
+    <nav data-sveltekit-prefetch>
         <svelte:element this={tagValue("/")} href="/">home</svelte:element> /
         <svelte:element this={tagValue("/about")} href="/about">about</svelte:element> /
         <svelte:element this={tagValue("/code")} href="/code">code</svelte:element> /

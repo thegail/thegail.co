@@ -2,8 +2,7 @@
     import { onMount } from "svelte";
     import { page } from "$app/stores";
     import staticData from "$lib/staticdata.json";
-    import bannerLight from "$lib/assets/fullsize_transparent.png";
-    import bannerDark from "$lib/assets/fullsize_transparent_dark.png";
+	import Banner from "$lib/Banner.svelte";
 
     let isDarkMode = false;
     onMount(() => {
@@ -17,7 +16,7 @@
 </script>
 
 <header>
-    <img class="banner" src={isDarkMode ? bannerDark : bannerLight} alt="thegail" />
+    <Banner />
     <nav>
         <svelte:element this={tagValue("/")} href="/">home</svelte:element> /
         <svelte:element this={tagValue("/about")} href="/about">about</svelte:element> /
@@ -44,13 +43,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
-
-    .banner {
-        max-width: 100%;
-        max-height: 150px;
-        width: auto;
-        height: auto;
     }
 
     nav {

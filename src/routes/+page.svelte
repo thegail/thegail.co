@@ -1,3 +1,20 @@
-<h1>Hi.</h1>
+<script>
+	import Banner from "$lib/Banner.svelte";
+	import Navigation from "$lib/Navigation.svelte";
+</script>
 
-<p>Some words about me.</p>
+<main>
+    <Banner />
+    <Navigation large={true} />
+</main>
+
+<style>
+    main {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+</style>

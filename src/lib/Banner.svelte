@@ -9,7 +9,6 @@
     let isDarkMode = false;
     onMount(() => {
         isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        console.log(isDarkMode);
     });
 </script>
 

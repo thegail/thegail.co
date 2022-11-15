@@ -1,8 +1,11 @@
 <script>
     import staticData from "$lib/staticdata.json";
+    import { slide } from "svelte/transition";
+
+    export let sliding = false;
 </script>
 
-<footer>
+<footer transition:slide={{ duration: sliding ? 400 : 0 }}>
     <span>
         &copy; thegail 2022 /
         &#x1F3F7; <code>{staticData.commitHash}</code> /

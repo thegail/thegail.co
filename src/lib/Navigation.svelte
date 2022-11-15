@@ -1,12 +1,14 @@
 <script>
     import { page } from "$app/stores";
 
+    export let large = false;
+
     function tagValue(path) {
         return $page.url.pathname === path ? "span" : "a";
     }
 </script>
 
-<nav>
+<nav style:font-size={large ? "1.3em" : "1em"}>
     <svelte:element this={tagValue("/")} href="/">home</svelte:element> /
     <svelte:element this={tagValue("/about")} href="/about">about</svelte:element> /
     <svelte:element this={tagValue("/code")} href="/code">code</svelte:element> /

@@ -3,14 +3,27 @@
 	import Footer from "$lib/Footer.svelte";
 	import { fade } from "svelte/transition";
     import { page } from "$app/stores";
+	import { onMount } from "svelte";
 
     let showFooter = false;
+    let fadeStage = 0;
 
     function tagValue(path) {
         return $page.url.pathname === path ? "span" : "a";
     }
 
+    // Currying! Reactivity! This is definitely not idiomatic but
+    // it works so I do not care.
+    $: getOpacity = ((fadeStage) => (i) => fadeStage < i ? "0%" : "100%")(fadeStage);
+
     function checkMousePosition() {}
+
+    onMount(() => {
+        let int = setInterval(() => {
+            fadeStage += 1;
+            if (fadeStage >= 7) clearInterval(int);
+        }, 1000);
+    });
 </script>
 
 <main>
@@ -18,10 +31,10 @@
     <Banner />
 
     <nav>
-        <svelte:element this={tagValue("/")} href="/">home</svelte:element> <span>/</span>
-        <svelte:element this={tagValue("/about")} href="/about">about</svelte:element> <span>/</span>
-        <svelte:element this={tagValue("/code")} href="/code">code</svelte:element> <span>/</span>
-        <svelte:element this={tagValue("/contacts")} href="/contacts">contacts</svelte:element>
+        <svelte:element this={tagValue("/")} href="/" style:opacity={getOpacity(1)}>1234</svelte:element> <span style:opacity={getOpacity(2)}>/</span>
+        <svelte:element this={tagValue("/about")} href="/about" style:opacity={getOpacity(3)}>5678</svelte:element> <span style:opacity={getOpacity(4)}>/</span>
+        <svelte:element this={tagValue("/code")} href="/code" style:opacity={getOpacity(5)}>90123</svelte:element> <span style:opacity={getOpacity(6)}>/</span>
+        <svelte:element this={tagValue("/contacts")} href="/contacts" style:opacity={getOpacity(7)}>45678</svelte:element>
     </nav>
     <div class="spacer" />
 
@@ -59,7 +72,7 @@
     }
 
     nav * {
-        /* opacity: 0; */
+
     }
 
     .dot {

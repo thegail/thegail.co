@@ -29,7 +29,7 @@
     }
 
     nav.large {
-        font-size: 1.3em;
+        font-size: min(1.6em, 6vw);
         border: none;
     }
 </style>

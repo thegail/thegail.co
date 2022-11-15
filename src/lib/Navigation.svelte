@@ -8,7 +8,7 @@
     }
 </script>
 
-<nav style:font-size={large ? "1.3em" : "1em"}>
+<nav class:large>
     <svelte:element this={tagValue("/")} href="/">home</svelte:element> /
     <svelte:element this={tagValue("/about")} href="/about">about</svelte:element> /
     <svelte:element this={tagValue("/code")} href="/code">code</svelte:element> /
@@ -26,5 +26,10 @@
         margin: 0;
         border-top: 2px solid var(--secondary);
         border-bottom: 2px solid var(--secondary);
+    }
+
+    nav.large {
+        font-size: 1.3em;
+        border: none;
     }
 </style>

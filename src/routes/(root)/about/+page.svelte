@@ -1,5 +1,15 @@
-<h1>Who am I?</h1>
+<h1>Hi!</h1>
+
+<p>I&rsquo;m Teddy. I&rsquo;m a programmer, mostly.</p>
 
 <p>
-    The thing about this question is I&rsquo;m not quite sure myself.
+	I make things sometimes. Occasionally those things are interesting enough to show to people, so I
+	put them here. I&rsquo;m a chronic project abandoner, so expect many half-baked ideas.
+</p>
+
+<p>
+	Other things about me: I run sometimes. I&rsquo;m a little bit fast but not <em>really</em> fast.
+	I like making music (guitar mostly). If you couldn&rsquo;t already tell from this site&rsquo;s
+	design, I&rsquo;m an <em>extremely boring person</em>, so I don&rsquo;t have much to say. Thanks
+	for stopping by though.
 </p>

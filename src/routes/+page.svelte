@@ -22,7 +22,7 @@
         let int = setInterval(() => {
             fadeStage += 1;
             if (fadeStage >= 7) clearInterval(int);
-        }, 1000);
+        }, 200);
     });
 </script>
 
@@ -72,7 +72,7 @@
     }
 
     nav * {
-
+        transition: opacity 0.8s;
     }
 
     .dot {

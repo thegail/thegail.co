@@ -1,21 +1,33 @@
 <script>
 	import Banner from "$lib/Banner.svelte";
-	import Navigation from "$lib/Navigation.svelte";
 	import Footer from "$lib/Footer.svelte";
 	import { fade } from "svelte/transition";
+    import { page } from "$app/stores";
 
     let showFooter = false;
+
+    function tagValue(path) {
+        return $page.url.pathname === path ? "span" : "a";
+    }
+
+    function checkMousePosition() {}
 </script>
 
 <main>
     <div class="spacer" />
     <Banner />
-    <Navigation large={true} />
+
+    <nav>
+        <svelte:element this={tagValue("/")} href="/">home</svelte:element> <span>/</span>
+        <svelte:element this={tagValue("/about")} href="/about">about</svelte:element> <span>/</span>
+        <svelte:element this={tagValue("/code")} href="/code">code</svelte:element> <span>/</span>
+        <svelte:element this={tagValue("/contacts")} href="/contacts">contacts</svelte:element>
+    </nav>
     <div class="spacer" />
 
     {#if showFooter}
         <Footer sliding=true />
-        <div class="hoverdetector" on:mouseleave={() => showFooter = false}>&nbsp;</div>
+        <div class="hoverdetector" on:mouseleave={() => checkMousePosition}>&nbsp;</div>
     {:else}
         <span class="dot" on:mouseenter={() => showFooter = true} in:fade={{ duration: 200 }} />
     {/if}
@@ -35,6 +47,21 @@
         flex-grow: 1;
     }
 
+    nav {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        gap: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin: 0;
+        font-size: min(1.6em, 6vw);
+    }
+
+    nav * {
+        /* opacity: 0; */
+    }
+
     .dot {
         border-radius: 50%;
         background: var(--secondary);
@@ -52,5 +79,10 @@
         bottom: 0;
         left: 0;
         width: calc(100% + 40px);
+        z-index: 0;
+    }
+
+    :global(footer) {
+        z-index: 1;
     }
 </style>

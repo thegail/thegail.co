@@ -66,6 +66,6 @@
     }
 
     nav * {
-        transition: opacity 0.8s;
+        transition: opacity 0.9s;
     }
 </style>

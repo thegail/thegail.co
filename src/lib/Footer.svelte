@@ -13,6 +13,7 @@
 
 <style>
     footer {
+        width: 100%;
         display: flex;
         justify-content: center;
         border-top: 2px solid var(--secondary);

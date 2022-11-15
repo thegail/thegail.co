@@ -29,7 +29,7 @@
 </svelte:head>
 
 <header>
-    <img class="banner" src={isDarkMode ? bannerDark : bannerLight} alt="thegail" />
+    <!-- <img class="banner" src={isDarkMode ? bannerDark : bannerLight} alt="thegail" /> -->
     <nav>
         <svelte:element this={tagValue("/")} href="/">home</svelte:element> /
         <svelte:element this={tagValue("/about")} href="/about">about</svelte:element> /

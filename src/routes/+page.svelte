@@ -1,11 +1,9 @@
 <script>
 	import Banner from "$lib/Banner.svelte";
 	import Footer from "$lib/Footer.svelte";
-	import { fade } from "svelte/transition";
     import { page } from "$app/stores";
 	import { onMount } from "svelte";
 
-    let showFooter = false;
     let fadeStage = 0;
 
     function tagValue(path) {
@@ -15,8 +13,6 @@
     // Currying! Reactivity! This is definitely not idiomatic but
     // it works so I do not care.
     $: getOpacity = ((fadeStage) => (i) => fadeStage < i ? "0%" : "100%")(fadeStage);
-
-    function checkMousePosition() {}
 
     onMount(() => {
         let int = setInterval(() => {
@@ -31,19 +27,17 @@
     <Banner />
 
     <nav>
-        <svelte:element this={tagValue("/")} href="/" style:opacity={getOpacity(1)}>1234</svelte:element> <span style:opacity={getOpacity(2)}>/</span>
-        <svelte:element this={tagValue("/about")} href="/about" style:opacity={getOpacity(3)}>5678</svelte:element> <span style:opacity={getOpacity(4)}>/</span>
-        <svelte:element this={tagValue("/code")} href="/code" style:opacity={getOpacity(5)}>90123</svelte:element> <span style:opacity={getOpacity(6)}>/</span>
-        <svelte:element this={tagValue("/contacts")} href="/contacts" style:opacity={getOpacity(7)}>45678</svelte:element>
+        <svelte:element this={tagValue("/")} href="/" style:opacity={getOpacity(1)}>home</svelte:element>
+        <span style:opacity={getOpacity(2)}>/</span>
+        <svelte:element this={tagValue("/about")} href="/about" style:opacity={getOpacity(3)}>about</svelte:element>
+        <span style:opacity={getOpacity(4)}>/</span>
+        <svelte:element this={tagValue("/code")} href="/code" style:opacity={getOpacity(5)}>code</svelte:element>
+        <span style:opacity={getOpacity(6)}>/</span>
+        <svelte:element this={tagValue("/contacts")} href="/contacts" style:opacity={getOpacity(7)}>contacts</svelte:element>
     </nav>
     <div class="spacer" />
 
-    {#if showFooter}
-        <Footer sliding=true />
-        <div class="hoverdetector" on:mouseleave={() => checkMousePosition}>&nbsp;</div>
-    {:else}
-        <span class="dot" on:mouseenter={() => showFooter = true} in:fade={{ duration: 200 }} />
-    {/if}
+    <Footer sliding={true} />
 </main>
 
 <style>
@@ -73,29 +67,5 @@
 
     nav * {
         transition: opacity 0.8s;
-    }
-
-    .dot {
-        border-radius: 50%;
-        background: var(--secondary);
-        border: none;
-        height: 10px;
-        width: 10px;
-        padding: 0;
-        position: absolute;
-        right: 5px;
-        bottom: 5px;
-    }
-
-    .hoverdetector {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: calc(100% + 40px);
-        z-index: 0;
-    }
-
-    :global(footer) {
-        z-index: 1;
     }
 </style>

@@ -1,5 +1,7 @@
 <h1>Contacts</h1>
 
+<p>I primarily communicate via the following:</p>
+
 <ul>
 	<li>discord: <strong>thegail#7362</strong></li>
 	<li>

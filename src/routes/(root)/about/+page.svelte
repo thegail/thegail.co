@@ -8,11 +8,10 @@
 </p>
 
 <p>
-	Other things about me: I run sometimes. I&rsquo;m a little bit fast but not <em>really</em> fast.
-	I like making music (guitar mostly). <span class="nobreak">日本語を少し話せる。</span> If you
-	couldn&rsquo;t already tell from this site&rsquo;s design, I&rsquo;m an
-	<em>extremely boring person</em>, so I don&rsquo;t have much to say. Thanks for stopping by
-	though.
+	Other things about me: I run sometimes (hoping to go under five this season). I like making music
+	(guitar mostly). <span class="nobreak">日本語を少し話せる。</span> If you couldn&rsquo;t already tell
+	from this site&rsquo;s design, I&rsquo;m an extremely boring person, so I don&rsquo;t have much to
+	say. Thanks for stopping by though.
 </p>
 
 <style>

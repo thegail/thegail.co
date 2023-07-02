@@ -1,5 +1,4 @@
 <script>
-    import staticData from "$lib/staticdata.json";
     import { slide } from "svelte/transition";
 
     export let sliding = false;
@@ -17,8 +16,8 @@
     >
         <span>
             &copy; thegail 2023 /
-            &#x1F3F7; <a href={repoLink} target="_blank"><code>{staticData.commitHash}</code></a> /
-            &#x1F528; {staticData.buildDate} /
+            &#x1F3F7; <a href={repoLink} target="_blank"><code>{__VERSION__}</code></a> /
+            &#x1F528; {__BUILD_DATE__} /
             &#x1F9F1; with <a href="https://kit.svelte.dev" target="_blank">SvelteKit</a>
         </span>
     </footer>

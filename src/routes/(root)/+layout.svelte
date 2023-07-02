@@ -3,9 +3,7 @@
 	import Footer from "$lib/Footer.svelte";
     import { page } from "$app/stores";
 
-    function tagValue(path) {
-        return $page.url.pathname === path ? "span" : "a";
-    }
+    $: tagValue = ((currentPath) => (path) => currentPath === path ? "span" : "a")($page.url.pathname);
 </script>
 
 <header>

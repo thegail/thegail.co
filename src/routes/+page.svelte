@@ -6,7 +6,7 @@
 
     let fadeStage = 0;
 
-    $: tagValue = (path) => $page.url.pathname === path ? "span" : "a";
+    $: tagValue = ((currentPath) => (path) => currentPath === path ? "span" : "a")($page.routeId);
 
     // Currying! Reactivity! This is definitely not idiomatic but
     // it works so I do not care.

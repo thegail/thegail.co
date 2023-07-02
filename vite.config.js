@@ -2,10 +2,11 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig, loadEnv } from 'vite';
 
 export default defineConfig(({ mode }) => {
-	let env = loadEnv(mode, process.cwd());
+	let env = loadEnv(mode, process.cwd(), "VERCEL");
 	let version;
 	if (mode === 'production') {
-		version = env.VERCEL_GIT_COMMIT_SHA.slice(0, 8);
+		let commitHash = env.VERCEL_GIT_COMMIT_SHA ?? "UNKNOWN";
+		version = commitHash.slice(0, 8);
 	} else {
 		version = 'local';
 	}

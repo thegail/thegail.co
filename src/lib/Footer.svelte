@@ -6,7 +6,7 @@
 
     let shown = false;
     $: visible = (!sliding) || shown;
-    const repoLink = "https://github.com/thegail/thegail.github.io";
+    const repoLink = "https://github.com/thegail/thegail.co";
 </script>
 
 {#if visible}
@@ -16,7 +16,7 @@
         on:mouseenter={() => shown = true}
     >
         <span>
-            &copy; thegail 2022 /
+            &copy; thegail 2023 /
             &#x1F3F7; <a href={repoLink} target="_blank"><code>{staticData.commitHash}</code></a> /
             &#x1F528; {staticData.buildDate} /
             &#x1F9F1; with <a href="https://kit.svelte.dev" target="_blank">SvelteKit</a>

@@ -3,15 +3,15 @@
 <p>I primarily communicate via the following:</p>
 
 <ul>
-	<li>discord: <strong>thegail#7362</strong></li>
+	<li>discord: <strong>@thegail</strong> (previously thegail#7362)</li>
 	<li>
 		<a href="https://github.com/thegail" target="_blank">
 			github: <strong>@thegail</strong>
 		</a>
 	</li>
 	<li>
-		<a href="mailto:losses.foxfire_00@icloud.com">
-			email (proxy address): <strong>losses.foxfire_00@icloud.com</strong>
+		<a href="mailto:hi@thegail.co">
+			email: <strong>hi@thegail.co</strong>
 		</a>
 	</li>
 </ul>
